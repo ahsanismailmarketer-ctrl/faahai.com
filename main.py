@@ -30,7 +30,7 @@ try:
     # Ab key GitHub par nazar nahi ayegi, sirf Streamlit Secrets mein hogi
     API_KEY = st.secrets["API_KEY"]
     genai.configure(api_key=API_KEY)
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash")
 except Exception as e:
     st.error("Setup Incomplete: Please add your NEW API_KEY in Streamlit Secrets.")
 
