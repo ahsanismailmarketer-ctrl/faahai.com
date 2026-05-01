@@ -55,7 +55,7 @@ st.markdown("""
 # 3. AI BACKEND (AUTO-RECOVERY LOGIC)
 # ==========================================
 # --- APNI API KEY YAHAN DALEN ---
-API_KEY = "AIzaSyCqS05SfuWeJo55FSBuAV2KeqxH9kI09Ko"
+API_KEY = API_KEY = st.secrets["AIzaSyBknsDcgODlaRNDQcnfvrug6cGwEeicyag"]
 genai.configure(api_key=API_KEY)
 
 def get_ai_response(prompt):
