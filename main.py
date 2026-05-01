@@ -25,7 +25,7 @@ try:
     # Ye line Streamlit ke "Secrets" se key uthayegi, GitHub se nahi
     API_KEY = st.secrets["API_KEY"]
     genai.configure(api_key=API_KEY)
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash")
 except Exception as e:
     st.error("Setup Incomplete: Please add your API_KEY in Streamlit Secrets.")
 
