@@ -20,12 +20,12 @@ st.markdown("""
     <div class="founder-tag">Founder | Ahsan Ismail</div>
 """, unsafe_allow_html=True)
 
-# 2. SECURE CONNECTION (KEY YAHAN NAHI HOGI)
+# 2. SECURE CONNECTION
 try:
-    # Ye line Streamlit ke "Secrets" se key uthayegi, GitHub se nahi
     API_KEY = st.secrets["API_KEY"]
     genai.configure(api_key=API_KEY)
-    model = genai.GenerativeModel("gemini-2.5-flash")
+    # Yahan humne model name "gemini-pro" kar diya hai jo zyada stable hai
+    model = genai.GenerativeModel("gemini-pro")
 except Exception as e:
     st.error("Setup Incomplete: Please add your API_KEY in Streamlit Secrets.")
 
@@ -47,4 +47,5 @@ if prompt := st.chat_input("How can I help you today?"):
             st.markdown(response.text)
             st.session_state.messages.append({"role": "assistant", "content": response.text})
         except Exception as e:
-            st.error(f"Error: {e}")
+            # Agar phir bhi model ka masla aaye to ye error dikhayega
+            st.error(f"AI Model Error: {e}")
