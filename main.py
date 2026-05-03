@@ -1,4 +1,28 @@
+import streamlit as st
 
+# 1. Ye command toolbar ko hide karne ke liye hai
+st.set_page_config(
+    page_title="Faah AI",
+    initial_sidebar_state="collapsed",
+    menu_items=None # Ye right side wala menu khatam kar dega
+)
+
+# 2. Ye CSS dunya ke har browser mein buttons hide kar degi
+st.markdown("""
+    <style>
+    /* Sab se khatarnak buttons ko hide karna */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .stDeployButton {display: none;}
+    [data-testid="stToolbar"] {display: none !important;}
+    button[title="View source"] {display: none !important;}
+    #manage-app-button {display: none !important;}
+    
+    /* Screen ko clean rakhna */
+    .stAppDeployButton {display: none !important;}
+    </style>
+""", unsafe_allow_html=True)
 import streamlit as st
 import google.generativeai as genai
 
