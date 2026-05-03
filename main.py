@@ -6,13 +6,24 @@ st.set_page_config(page_title="Faah AI", layout="centered", initial_sidebar_stat
 
 st.markdown("""
     <style>
+    /* 1. Header, Footer aur Main Menu ko bilkul khatam karne ke liye */
     #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
     header {visibility: hidden;}
-    .stDeployButton {display: none;}
+    footer {visibility: hidden;}
+    
+    /* 2. 'Hosted with Streamlit' aur 'Created by' ko dhone ke liye */
+    .viewerBadge_container__1QS1n {display: none !important;}
+    .viewerBadge_link__1S137 {display: none !important;}
+    footer {display: none !important;}
+    
+    /* 3. Right side wala deploy button aur toolbar hide karne ke liye */
+    .stAppDeployButton {display: none !important;}
     [data-testid="stToolbar"] {display: none !important;}
-    button[title="View source"] {display: none !important;}
-    #manage-app-button {display: none !important;}
+    
+    /* 4. Background aur gap theek karne ke liye */
+    .stApp {
+        bottom: 0px !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
